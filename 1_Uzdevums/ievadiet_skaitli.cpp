@@ -15,28 +15,28 @@ using namespace std; // Izmantot nosaukumus no C++ standarta bibliotēkas
 int main() // Galvenā programmas funkcija
 {
     // Mainīgo definēšana
-    int skaitlis = 0; // Tiks saglabāts ievadītais skaitlis.
+    int skaitlis; // Tiks saglabāts ievadītais skaitlis.
     int otradi = 0; // Tiks saglabāts skaitlis no otras puses.
 
-    cout << "Ievadiet skaitli:";
+    cout << "Ievadiet skaitli: ";
     cin >> skaitlis;
 
-    int pedejaiscipars = 0; // Saglabās ievadītā skaitļa pēdējo ciparu.
     int temp = skaitlis; // Saglabāsies skaitlis ar kuru tiek veiktas manipulācijas.
-
     // Cikls atkārtosies līdz pagaidu mainīgajā būs skaitlis lielāks par nulli.
     while (temp > 0) {
         // Izmantojot modulo operatoru noskaidrojam ievadītā skaitļa pēdējo ciparu.
-        pedejaiscipars = temp % 10;
+        int pedejaiscipars = temp % 10;
+
         // Pareizinam esošo skaitli ar 10,
         // lai tas būtu par vienu desmitu tālāk par pieskaitāmo pēdējo ciparu.
         otradi = otradi * 10 + pedejaiscipars;
-        // Pagaidu maingā skaitli dalam ar 10, lai samazinātu pagaidu skaitli par 1 desmitu.
+
+        // Pagaidu mainīgā skaitli dalam ar 10, lai samazinātu pagaidu skaitli par 1 desmitu.
         // Tā kā tas ir integer datu tips, skaitlis tiek dalīts un saglabāts bez atlikuma.
-        temp = temp / 10;
+        temp /= 10;
     }
 
-    cout << "Skiatlis no otras puses: " << otradi << endl;
+    cout << "Skaitlis no otras puses: " << otradi << endl;
 
     if (skaitlis == otradi) {
         cout << "Ievadītais skaitlis ir palindroms." << endl;

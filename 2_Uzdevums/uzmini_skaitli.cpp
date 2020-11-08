@@ -25,49 +25,39 @@ int main()
     // Laiks ir uzņemts sekundēs.
 
     int skaitlis = rand() % 101; // Uzģenerējam Pseidogadījumskaitli!
-    // RAND_MAX konstantes atlikums dalījumam ar 101.
-
-    int ievaditais; // Saglabāsim lietotāja ievadītu skaitli.
+    // RAND_MAX konstantes atlikums dalījumam ar 101. Intervālā no 0-100 ir 101 skaitlis.
 
     cout    << "Lai izietu no programmas ievadiet \"-1\"" << endl
             << "Uzminiet skaitli no 0-100." << endl;
 
-    int counter = 0; // Saglabāsim cik reizes ir minēts.
-    do {
-        counter++; // Pieskaitam 1 pie minējumu skaita.
+    for (int counter = 1; counter <= 10; counter++) {
         
-        if (counter <= 1) {
-            cout << "Ievadiet skaitli: ";
-        } else {
-            cout << "Mēģiniet vēlreiz, ievadiet skaitli: ";
-        }
+        cout << "Mēģinājums: " << counter << endl;
 
+        if (counter == 1) cout << "Ievadiet skaitli: ";
+        else cout << "Mēģiniet vēlreiz, ievadiet skaitli: ";
+
+        int ievaditais; // Saglabāsim lietotāja ievadītu skaitli.
         cin >> ievaditais;
-
+        
+        // Beidzam programmu
         if (ievaditais == -1) {
             cout << "Izejam!" << endl;
-            return 0;
+            return 0; 
         }
-        // Ja uzminēts skaitlis izkrītam no cikla.
+        
+        // Ja uzminēts skaitlis izejam no programmas
         if ( skaitlis == ievaditais ) {
             cout << "Skaitlis uzminēts no " << counter << ". mēģinājuma." << endl;
-            counter = -1; // Izejot no cikla programma pārbaudīs šo mainīgo.
-            break;
+            return 0;
         }
 
-        if ( skaitlis > ievaditais ) {
-            cout << "Skaitlis ir lielāks par ievadīto." << endl;
-        }
-
-        if ( skaitlis < ievaditais ) {
-            cout << "Skaitlis ir mazāks par ievadīto." << endl;
-        }
+        if (skaitlis > ievaditais) cout << "Skaitlis ir lielāks par ievadīto." << endl;
+        
+        if (skaitlis < ievaditais)cout << "Skaitlis ir mazāks par ievadīto." << endl;
     }
-    while (counter < 10);
-
-    if (counter == 10) {
-        cout << "Jūs zaudējat! Pareizā atbilde: " << skaitlis << endl;
-    }
+    
+    cout << "Jūs zaudējat! Pareizā atbilde: " << skaitlis << endl;
 
     // system("pause"); Operētājsistēmas specifiska komanda/konstrukcija.
     return 0; // Atgriež operētājsistēmai 0
