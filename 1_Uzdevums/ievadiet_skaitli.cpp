@@ -38,11 +38,10 @@ int main() // Galvenā programmas funkcija
 
     cout << "Skaitlis no otras puses: " << otradi << endl;
 
-    if (skaitlis == otradi) {
+    if (skaitlis == otradi)
         cout << "Ievadītais skaitlis ir palindroms." << endl;
-    } else {
+    else
         cout << "Ievadītais skaitlis nav palindroms." << endl;
-    }
 
     // system("pause"); Operētājsistēmas specifiska komanda/konstrukcija.
     return 0; // Atgriež operētājsistēmai 0

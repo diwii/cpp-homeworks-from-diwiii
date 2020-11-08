@@ -32,9 +32,7 @@ int main() // Galvenā programmas funkcija
             temp /= 10;
         }
 
-        if (skaitlis == otradi) {
-            cout << skaitlis << endl;
-        }
+        if (skaitlis == otradi) cout << skaitlis << endl;
     }
     // system("pause"); Operētājsistēmas specifiska komanda/konstrukcija.
     return 0; // Atgriež operētājsistēmai 0
