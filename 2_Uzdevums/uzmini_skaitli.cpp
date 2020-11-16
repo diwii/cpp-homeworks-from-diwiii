@@ -53,8 +53,8 @@ int main()
         }
 
         if (skaitlis > ievaditais) cout << "Skaitlis ir lielāks par ievadīto." << endl;
+        else cout << "Skaitlis ir mazāks par ievadīto." << endl;
         
-        if (skaitlis < ievaditais)cout << "Skaitlis ir mazāks par ievadīto." << endl;
     }
     
     cout << "Jūs zaudējat! Pareizā atbilde: " << skaitlis << endl;
