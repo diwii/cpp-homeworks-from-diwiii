@@ -1,8 +1,1 @@
-Jautājumi pasniedzējam:
-
-Vai šo var saīsināt:
-    otradi = otradi * 10 + pedejaiscipars;
-līdzīgi kā:
-    temp /= 10;
-
-Inicializējot mainīgo cik svarīgi vai nesvarīgi ir piedēvēt mainīgajam vērtību???
+Pamanīju, ka ievadot terminālī 1.0 un 1,0 ir atšķirība.
