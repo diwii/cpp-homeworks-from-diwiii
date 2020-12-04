@@ -27,14 +27,7 @@ int meet_time(int kmh1, int kmh2, int km)
 {
     // Pārveido attāluma kilometrus metros.
     double attalums = km * 1000;
-    // Laika vienība.
-    int laiks = 0;
-    while (attalums > 0) {
-        // No kopējā attāluma atņem abu objektu ātrumus konkrētajā sekundē.
-        attalums -= (Vms(kmh1) + Vms(kmh2));
-        laiks += 1;
-    }
-    return laiks;
+    return attalums / (Vms(kmh1)+Vms(kmh2));
 }
 
 int main()
