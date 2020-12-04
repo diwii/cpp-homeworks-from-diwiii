@@ -14,8 +14,8 @@
  * 24,0 -> 10,00
 **/
 
-#include <iostream> // Input/Output plūsmas atbalsts
-using namespace std; // Izmantot nosaukumus no C++ standarta bibliotēkas
+#include <iostream>
+using namespace std;
 
 double maksa(double stundas)
 {
@@ -34,11 +34,11 @@ double maksa(double stundas)
 
 int main()
 {
-    cout << "Ievadiet autostāvvietas stundas: ";
     double stundas;
-    cin >> stundas;
 
-    cout << "Maksa par autostāvvietu: " << maksa(stundas) << endl;  
+    cout << "Ievadiet autostāvvietas stundas: ";
+    cin >> stundas;
+    cout << "Maksa par autostāvvietu: " << maksa(stundas) << endl;
 
     return 0;
 }
