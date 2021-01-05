@@ -1,1 +1,1 @@
-int removeRecord();
+void removeRecord();

@@ -7,7 +7,7 @@ using namespace std;
 /**
  * Aizvieto ierakstu ar tukšu ierakstu.
  **/
-int removeRecord()
+void removeRecord()
 {
     cout << "Izdzēst ierakstu" << endl;
     
@@ -22,6 +22,4 @@ int removeRecord()
     } else {
         cout << "Ieraksts nav atrasts." << endl;
     }
-
-    return 0;
 }

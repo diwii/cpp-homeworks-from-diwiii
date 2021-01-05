@@ -1,1 +1,1 @@
-int printAllRecords();
+void printAllRecords();

@@ -1,24 +1,24 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 
-// #include "record/menuFunctions.h"
+#include "record/config.h"
 #include "record/storeRecord.h"
 #include "record/removeRecord.h"
 #include "record/printAllRecords.h"
 #include "record/findRecord.h"
 #include "record/editRecord.h"
+#include "record/printNegativeRecords.h"
+#include "record/countRecords.h"
+#include "record/backup.h"
 using namespace std;
 
 int getInput();
-
-struct menuItem{
-    string label;
-    int index;
-};
-
 void printMenu();
 
+/**
+ * Izvada menu, gaida ievadi.
+ * Izsauc funkciju balstoties uz ievadīto skaitli.
+ **/
 void menu()
 {
     printMenu();
@@ -33,37 +33,34 @@ void menu()
         break;
         case 5: editRecord();
         break;
+        case 6: printNegativeRecords();
+        break;
+        case 7: countRecords();
+        break;
+        case 8: backup();
+        break;
+        case 9: exit(0);
+        break;
     }
-    // cout << "input: " << getInput() << endl;
 }
 
+/**
+ * Izvada menu tekstus.
+ */
 void printMenu() {
-    int N = 9;
-    menuItem item[N];
-    
-    item[0].label = "(1) Pievienot ierakstu.";
-    item[0].index = 1;
-    item[1].label = "(2) Dzēst ierakstu.";
-    item[1].index = 2;
-    item[2].label = "(3) Izvadīt visus ierakstus.";
-    item[2].index = 3;
-    item[3].label = "(4) Atrast ierakstu.";
-    item[3].index = 4;
-    item[4].label = "(5) Izmainīt konta atlikumu.";
-    item[4].index = 5;
-    item[5].label = "(6) Izvadīt parādniekus.";
-    item[5].index = 6;
-    item[6].label = "(7) Saskaitīt ierakstus.";
-    item[6].index = 7;
-    item[7].label = "(8) Izveidot datubāzes kopiju.";
-    item[7].index = 8;
-    item[8].label = "(9) Iziet.";
-    item[8].index = 9;
 
-    // Izvada uz ekrāna menu list
-    for (int i = 0; i<N; i++) {
-        cout << item[i].label << endl;
-    }
+    string line(TAB_WIDTH*4, '-');
+    cout << line << endl;
+    
+    cout    << "(1) Pievienot ierakstu." << endl
+            << "(2) Dzēst ierakstu." << endl
+            << "(3) Izvadīt visus ierakstus." << endl
+            << "(4) Atrast ierakstu." << endl
+            << "(5) Izmainīt konta atlikumu." << endl
+            << "(6) Izvadīt parādniekus." << endl
+            << "(7) Saskaitīt ierakstus." << endl
+            << "(8) Izveidot datubāzes kopiju." << endl
+            << "(9) Iziet." << endl;
 }
 
 /**
@@ -75,7 +72,9 @@ bool isBetween(char c)
     return false;
 }
 /**
+ * Pārbauda vai ievadītais simbols ir cipars.
  * Atgriež ievadīto ciparu.
+ * Kļūda kamēr simbols nav cipars.
  **/
 int getInput()
 {
@@ -83,7 +82,6 @@ int getInput()
     char character = '\0';
     // Kamēr simbols nav viens no cipariem, pieprasa ievadi.
     while (!isBetween(character)) {
-        // cin >> character;
         getline(cin, input);
         character = input.c_str()[0];
     }

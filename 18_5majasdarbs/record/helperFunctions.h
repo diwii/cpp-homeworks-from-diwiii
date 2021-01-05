@@ -1,4 +1,3 @@
-bool recordExists();
 int getInputForInt();
 float getInputForFloat();
 void setInputForChar(char* field, int size);

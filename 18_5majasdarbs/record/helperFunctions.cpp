@@ -6,13 +6,6 @@
 using namespace std;
 
 /**
- * Pārbauda vai ieraksts eksistē.
- **/
-bool recordExists()
-{
-    
-}
-/**
  * Atgriež skaitli, vai kļūda kamēr nav ievadīts skaitlis.
  **/
 int getInputForInt()
@@ -44,6 +37,7 @@ float getInputForFloat()
 /**
  * Paņem no ievades noteiktu simbolu skaitu, vai kļūda
  * kamēr ievadīts pareizs simbolu skaits.
+ * Ieraksta funkcijai nodotajā argumentā "field".
  **/
 void setInputForChar(char* field, int size)
 {
@@ -56,7 +50,8 @@ void setInputForChar(char* field, int size)
     strcpy(field, input.c_str());
 }
 /**
- * Konta nummura ievade
+ * Konta nummura ievade.
+ * Pieprasa skaitli intervālā no 1 līdz datubāzes ierakstu daudzums.
  **/
 int requestRecordIndex()
 {

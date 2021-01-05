@@ -1,1 +1,1 @@
-int findRecord();
+void findRecord();

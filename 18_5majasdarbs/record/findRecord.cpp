@@ -4,7 +4,7 @@
 #include "dbFunctions.h"
 using namespace std;
 
-int findRecord()
+void findRecord()
 {
     cout << "Atrast ierakstu" << endl;
 
@@ -12,11 +12,10 @@ int findRecord()
 
     clientData client = recordExists(index);
 
-    if (client.accNum != -1) {
+    if (client.accNum != -1) { // Pārbauda vai ieraksts atrasts
         printRecordTitle();
         printRecord(client);
     } else {
         cout << "Ieraksts nav atrasts." << endl;
     }
-    return 0;
 }

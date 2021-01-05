@@ -26,7 +26,7 @@ void storeRecord()
         cout << "Ievadiet lietotāja uzvārdu: " << endl;
         setInputForChar(client.sur, sizeof(client.sur));
 
-        cout << "Ievadiet lietotāja naudu: " << endl;
+        cout << "Ievadiet lietotāja konta atlikumu: " << endl;
         client.balance = getInputForFloat();
         // setInputForFloat(client.balance);
 

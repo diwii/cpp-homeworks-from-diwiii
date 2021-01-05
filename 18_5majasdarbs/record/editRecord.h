@@ -1,1 +1,1 @@
-int editRecord();
+void editRecord();
