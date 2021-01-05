@@ -5,22 +5,18 @@
 using namespace std;
 
 /**
- * Izdzēš
+ * Aizvieto ierakstu ar tukšu ierakstu.
  **/
 int removeRecord()
 {
     cout << "Izdzēst ierakstu" << endl;
-    int index = 0;
-    do {
-        cout << "Ievadiet konta nummuru intervālā no 1 - "<< RECORD_LENGTH << endl;
-        index = getInputForInt();
-    } while (index < 1 || index > RECORD_LENGTH);
+    
+    int index = requestRecordIndex() -1;
 
-    clientData client = recordExists(index-1);
+    clientData client = recordExists(index);
     clientData blank = {0,"","",0};
 
     if (client.accNum != -1) {
-        index = client.accNum -1;
         store(index, blank); // Saglabā tukšu ierakstu.
         cout << "Ieraksts ar konta nr.: " << client.accNum << " izdzēsts!" << endl;
     } else {

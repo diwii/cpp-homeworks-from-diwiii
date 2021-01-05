@@ -56,6 +56,19 @@ void setInputForChar(char* field, int size)
     strcpy(field, input.c_str());
 }
 /**
+ * Konta nummura ievade
+ **/
+int requestRecordIndex()
+{
+    int index = 0;
+    do {
+        cout << "Ievadiet konta nummuru intervālā no 1 - "<< RECORD_LENGTH << endl;
+        index = getInputForInt();
+    } while (index < 1 || index > RECORD_LENGTH);
+
+    return index;
+}
+/**
  * Izvada Ierakstu virsrakstus.
  **/
 void printRecordTitle()

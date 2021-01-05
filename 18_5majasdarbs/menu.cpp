@@ -5,8 +5,9 @@
 // #include "record/menuFunctions.h"
 #include "record/storeRecord.h"
 #include "record/removeRecord.h"
-#include "record/selectAllRecords.h"
+#include "record/printAllRecords.h"
 #include "record/findRecord.h"
+#include "record/editRecord.h"
 using namespace std;
 
 int getInput();
@@ -26,9 +27,11 @@ void menu()
         break;
         case 2: removeRecord();
         break;
-        case 3: selectAllRecords();
+        case 3: printAllRecords();
         break;
         case 4: findRecord();
+        break;
+        case 5: editRecord();
         break;
     }
     // cout << "input: " << getInput() << endl;
@@ -46,7 +49,7 @@ void printMenu() {
     item[2].index = 3;
     item[3].label = "(4) Atrast ierakstu.";
     item[3].index = 4;
-    item[4].label = "(5) Izmainīt konta balansu.";
+    item[4].label = "(5) Izmainīt konta atlikumu.";
     item[4].index = 5;
     item[5].label = "(6) Izvadīt parādniekus.";
     item[5].index = 6;

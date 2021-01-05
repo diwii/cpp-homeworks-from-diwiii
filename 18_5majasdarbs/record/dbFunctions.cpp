@@ -30,9 +30,10 @@ void store(int& index, clientData& client)
 {
     fstream db;
     index *= sizeof(clientData);
+
     db.open(DB_NAME, ios::in|ios::out|ios::binary);
-        db.seekp(index, db.beg);
-        db.write((char*)&client, sizeof(client));
+    db.seekp(index, db.beg);
+    db.write((char*)&client, sizeof(clientData));
     db.close();
 }
 
@@ -44,6 +45,7 @@ int getEmptyRecord()
     fstream db;
     clientData client;
     int index = 0;
+    
     db.open(DB_NAME, ios::in|ios::binary);
     for (index; index < RECORD_LENGTH; index++) {
 
@@ -53,5 +55,6 @@ int getEmptyRecord()
         if (client.accNum == 0) break;
     }
     db.close();
+
     return index;
 }

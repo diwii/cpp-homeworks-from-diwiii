@@ -19,14 +19,13 @@ int main()
     db.open(DB_NAME);
     if (db.fail()) {
         cout << DB_NAME << " neatveras." << endl;
-        cout << "Izveido datubazi un aizpilda to ar " << RECORD_LENGTH << " tukšiem ierakstiem" << endl;
+        cout << "Izveido datubāzes failu un aizpilda to ar " << RECORD_LENGTH << " tukšiem ierakstiem" << endl;
 
         clientData blank = {0,"","",0};
         db.open(DB_NAME, ios::out|ios::binary);
         for (int i = 0; i<RECORD_LENGTH; i++) {
             db.write((char*)&blank, sizeof(clientData));
         }
-        db.close();
     }
     db.close();
 
