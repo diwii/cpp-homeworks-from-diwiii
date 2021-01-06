@@ -8,7 +8,7 @@ const string DB_NAME = "client.data";
 /**
  * Datubāzes ierakstu tilpums.
  **/
-const int RECORD_LENGTH = 10;
+const int RECORD_LENGTH = 100;
 /**
  * iomanip platums starp kolonnām.
  **/

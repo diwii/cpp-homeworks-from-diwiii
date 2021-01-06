@@ -33,6 +33,7 @@ float getInputForFloat()
         cin.ignore(1000, '\n');
         cin >> f;
     }
+    return f;
 }
 /**
  * Paņem no ievades noteiktu simbolu skaitu, vai kļūda

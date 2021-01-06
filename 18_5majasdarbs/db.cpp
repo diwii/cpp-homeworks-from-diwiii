@@ -23,6 +23,7 @@
 #include <string>
 
 #include "record/config.h"
+#include "dummyRecords.h"
 #include "menu.h"
 
 using namespace std;
@@ -32,19 +33,14 @@ int main()
     fstream db;
     /**
      * Ja datubāzes fails netika atrasts, izveido datubāzes failu ar nosaukumu, kurš glabājas iekš DB_NAME.
-     * Un aizpilda to ar DB_RECORD_LENGTH tukšiem ierakstiem.
+     * Un aizpilda to ar RECORD_LENGTH dummy ierakstiem.
      **/
     db.open(DB_NAME);
     if (db.fail()) {
         cout << DB_NAME << " neatveras." << endl;
-        cout << "Izveido datubāzes failu un aizpilda to ar " << RECORD_LENGTH << " tukšiem ierakstiem" << endl;
+        cout << "Izveido datubāzes failu un aizpilda to ar " << RECORD_LENGTH << " dummy ierakstiem" << endl;
 
-        clientData blank = {0,"","",0}; // Tukš ieraksts.
-
-        db.open(DB_NAME, ios::out|ios::binary);
-        for (int i = 0; i<RECORD_LENGTH; i++) {
-            db.write((char*)&blank, sizeof(clientData));
-        }
+        dummyRecords();
     }
     db.close();
 
