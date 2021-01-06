@@ -4,7 +4,6 @@
 using namespace std;
 
 int totalRecords = 0;
-
 /**
  * Argumentfunkcija select funkcijai
  * Ja funkcija tiek izsaukta pieskaita +1 iekš totalRecords.
@@ -19,6 +18,7 @@ void recordCounter(clientData& client)
  **/
 void countRecords()
 {
+    totalRecords = 0; // Reseto.
     select(allRecords, recordCounter);
     cout << "Ieraksti datubāzē: " << totalRecords << endl;
 }
